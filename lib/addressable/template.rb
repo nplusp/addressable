@@ -25,14 +25,12 @@ module Addressable
   # RFC 6570 (http://tools.ietf.org/html/rfc6570).
   class Template
     # Constants used throughout the template code.
-    anything =
-      Addressable::URI::CharacterClasses::RESERVED +
-      Addressable::URI::CharacterClasses::UNRESERVED
+    anything = 
+      "#{Addressable::URI::CharacterClasses::RESERVED}#{Addressable::URI::CharacterClasses::UNRESERVED}"
 
 
     variable_char_class =
-      Addressable::URI::CharacterClasses::ALPHA +
-      Addressable::URI::CharacterClasses::DIGIT + '_'
+      "#{Addressable::URI::CharacterClasses::ALPHA}#{Addressable::URI::CharacterClasses::DIGIT}_"
 
     var_char =
       "(?:(?:[#{variable_char_class}]|%[a-fA-F0-9][a-fA-F0-9])+)"
